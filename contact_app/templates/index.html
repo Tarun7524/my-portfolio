@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarun Kumar Killamsetti | Portfolio</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Back & Beyond</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Hi, I'm Tarun Kumar Killamsetti</h1>
+        <h2 class="gradient-text">Python Full Stack Developer</h2>
+        <p class="hero-desc">
+            Detail-oriented Information Technology graduate with hands-on experience in Python full stack development. 
+            Skilled in building web applications using Django, HTML, CSS, and SQL.
+        </p>
+        <div class="social-icons">
+            <a href="https://github.com/Tarun7524" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/tarunkumar-killamsetti-4aab5929b" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:killamsettitarunkumar@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <h3 class="section-title">About Me</h3>
+        <p>I am an IT graduate from GIET Engineering College seeking an entry-level Python Full Stack Developer role. I have a strong foundation in problem-solving, backend development, and database management.</p>
+    </section>
+
+    <section id="experience" class="container experience-box">
+        <h3 class="section-title">Experience</h3>
+        <div class="exp-item">
+            <h4>Full Stack Developer Intern</h4>
+            <p class="subtitle">Data Pro Online | 12 Weeks</p>
+            <ul>
+                <li>Developed and tested web application modules using Python and Django.</li>
+                <li>Worked on backend development including database integration and API handling.</li>
+                <li>Improved debugging, code quality, and problem-solving skills in real-world scenarios.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h3 class="section-title">Projects</h3>
+        <div class="project-grid">
+            <div class="card">
+                <h4>To-Do Web Application</h4>
+                <p class="tag">Django Full Stack</p>
+                <p>Developed a full-stack To-Do application using Django with CRUD operations for task management and user authentication.</p>
+            </div>
+            <div class="card">
+                <h4>Smart Policing System</h4>
+                <p class="tag">ML and AI</p>
+                <p>Built a predictive crime analysis system using TF-IDF, SVM classification, and LLM models like GPT and XLNet.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container">
+        <h3 class="section-title">Skills</h3>
+        <div class="skills-wrapper">
+            <div class="skill-card">
+                <h4>Frontend</h4>
+                <div class="skill-list">
+                    <div class="skill-item"><i class="devicon-html5-plain colored"></i> <span>HTML</span></div>
+                    <div class="skill-item"><i class="devicon-css3-plain colored"></i> <span>CSS</span></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h4>Backend</h4>
+                <div class="skill-list">
+                    <div class="skill-item"><i class="devicon-python-plain colored"></i> <span>Python</span></div>
+                    <div class="skill-item"><i class="devicon-django-plain colored"></i> <span>Django</span></div>
+                    <div class="skill-item"><i class="devicon-java-plain colored"></i> <span>Java</span></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h4>Database</h4>
+                <div class="skill-list">
+                    <div class="skill-item"><i class="devicon-mysql-plain colored"></i> <span>SQL</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="contact" class="container contact-section">
+    <h3 class="section-title">Contact Me</h3>
+    
+    {% if status == 'success' %}
+        <p style="color: green; font-weight: bold; margin-bottom: 20px;">
+            Thank you! Your message has been saved to the database.
+        </p>
+    {% endif %}
+
+    <form action="" method="POST" class="contact-form">
+        {% csrf_token %} <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+    <footer>
+        <p>© 2026 Tarun Kumar Killamsetti. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
